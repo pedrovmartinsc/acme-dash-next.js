@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title : 'ACME'
   
 
-}
+};
 
 export default function RootLayout({children}: {children: React.ReactNode}){
   return (
