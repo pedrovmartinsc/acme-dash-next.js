@@ -60,7 +60,7 @@ model Invoice {
 model Revenue{
   id String @id @default(uuid())
   month String @unique
- revunue Int
+  revenue Int
  
- @@map("revenue")
+ @@map("revenues")
 }

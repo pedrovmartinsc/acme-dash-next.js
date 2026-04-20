@@ -24,17 +24,17 @@ async function main() {
   const customer_data = [{
     name: 'Alex Bessa',
     email: 'alex@email.com',
-    imageUrl: 'https://ui-avatars.com/api/?nome=Alex+Bessa&background=random'
+    imageUrl: 'https://ui-avatars.com/api/?name=Alex+Bessa&background=random'
   }, {
     name: 'Valdiana Bessa',
     email: 'valdiana@email.com',
-    imageUrl: 'https://ui-avatars.com/api/?nome=Valdiana+Bessa&background=random'
+    imageUrl: 'https://ui-avatars.com/api/?name=Valdiana+Bessa&background=random'
 
-  }
-{
+  },
+  {
     name: 'Timóteo Bessa',
     email: 'timoteo@email.com',
-    imageUrl: 'https://ui-avatars.com/api/?nome=Timoteo+Bessa&background=random'
+    imageUrl: 'https://ui-avatars.com/api/?name=Timoteo+Bessa&background=random'
 
   }];
 
@@ -143,22 +143,22 @@ async function main() {
     { month: 'Dez', revenue: 646562266 },
   ];
 
-  for (const data of revenueData){
+  for (const data of revenueData) {
     await prisma.revenue.upsert({
       where: { month: data.month },
-      update: { revunue: data.revenue },
+      update: { revenue: data.revenue },
       create: data
     });
   };
   console.log('Dados de receita mensal criados.');
 
   console.log('População concluída com sucess.');
-  
+
   main()
-   .catch(() => {
-    console.log('Erro ao popular o banco:', Error);
-   })
-   .finally( async() => {
-     await prisma.$disconnect();
-   })
+    .catch(() => {
+      console.log('Erro ao popular o banco:', Error);
+    })
+    .finally(async () => {
+      await prisma.$disconnect();
+    })
 };

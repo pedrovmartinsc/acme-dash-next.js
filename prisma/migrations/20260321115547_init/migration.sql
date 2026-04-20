@@ -38,7 +38,7 @@ CREATE TABLE "Invoice" (
 CREATE TABLE "revenue" (
     "id" TEXT NOT NULL,
     "month" TEXT NOT NULL,
-    "revunue" INTEGER NOT NULL,
+    "revenue" INTEGER NOT NULL,
 
     CONSTRAINT "revenue_pkey" PRIMARY KEY ("id")
 );
